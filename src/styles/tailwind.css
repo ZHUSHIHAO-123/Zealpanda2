@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #FF9EC7; /* warm pink */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #87CEEB; /* soft sky blue */
+    --color-secondary-foreground: #2D3748; /* deep charcoal */
+    
+    /* Accent Colors */
+    --color-accent: #FFD700; /* golden yellow */
+    --color-accent-foreground: #2D3748; /* deep charcoal */
+    
+    /* Background Colors */
+    --color-background: #FEFEFE; /* pure white with subtle warmth */
+    --color-surface: #F8F9FA; /* barely-there gray */
+    
+    /* Text Colors */
+    --color-text-primary: #2D3748; /* deep charcoal */
+    --color-text-secondary: #718096; /* medium gray */
+    
+    /* Status Colors */
+    --color-success: #68D391; /* gentle green */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #F6AD55; /* soft orange */
+    --color-warning-foreground: #2D3748; /* deep charcoal */
+    --color-error: #FC8181; /* muted coral */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Border and Shadow */
+    --color-border: #F8F9FA; /* surface color for borders */
+    --shadow-warm: 0 4px 12px rgba(255, 158, 199, 0.15);
+    --shadow-warm-lg: 0 8px 24px rgba(255, 158, 199, 0.2);
+    
+    /* Animation */
+    --ease-gentle: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer components {
+  .font-heading {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-caption {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .shadow-warm-lg {
+    box-shadow: var(--shadow-warm-lg);
+  }
+  
+  .transition-gentle {
+    transition-timing-function: var(--ease-gentle);
+    transition-duration: 250ms;
+  }
+}

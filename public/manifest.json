@@ -1,0 +1,31 @@
+{
+  "short_name": "PandaChinese",
+  "name": "PandaChinese - Learn Chinese with Your Panda Friend",
+  "description": "A fun and interactive Chinese learning app for kids with an adorable panda companion",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FF6B9D",
+  "background_color": "#FFF8F0",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["education", "kids", "language"],
+  "lang": "en",
+  "dir": "ltr"
+}
