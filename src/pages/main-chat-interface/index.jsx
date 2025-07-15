@@ -6,7 +6,7 @@ import PandaAvatar from './components/PandaAvatar';
 import ChatContainer from './components/ChatContainer';
 import ChatInput from './components/ChatInput';
 import LevelProgressHeader from './components/LevelProgressHeader';
-import openaiService from '../../services/openaiService';
+
 import themeManager from '../../utils/themeManager';
 
 const MainChatInterface = () => {
@@ -120,12 +120,26 @@ const MainChatInterface = () => {
     setIsLoading(true);
 
     try {
-      // Get enhanced AI response using OpenAI service
-      const aiResponse = await openaiService.generateResponse(messageContent, randomMood);
+      // Get enhanced AI response using Netlify Function
+      const response = await fetch('/.netlify/functions/chatgpt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: messageContent })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
       
       const aiMessage = {
         id: Date.now() + 1,
-        content: aiResponse,
+        content: data.reply,
         isUser: false,
         timestamp: new Date()
       };
